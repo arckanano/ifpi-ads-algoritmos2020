@@ -1,13 +1,14 @@
 # 3 - Leia um valor em minutos, calcule e escreva o equivalente em horas e minutos.
 #
-# Entrada dos minutos
-minutos = int(input("Minutos: "))
+def main():
+    valor_em_minutos = int(input("Valor em minutos> "))
+    transformar(valor_em_minutos)
 
-# Descobrir quantas horas
-horas = minutos // 60
 
-# Descobrir minutos
-minutos_restantes = minutos % 60
+def transformar(m):
+    horas = m // 60
+    minutos = m % 60
+    print(f'{m} min = {horas} h e {minutos} m')
 
-# Resultados
-print(f'{minutos} = {horas} horas e {minutos_restantes} minutos')
+
+main()
