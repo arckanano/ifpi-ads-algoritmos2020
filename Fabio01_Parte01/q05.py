@@ -10,3 +10,6 @@ unidade = (numero % 100) % 10
 
 # resultado
 print(f'{centena} centenas, {dezenas} dezenas e {unidade} unidades')
+
+#TODO:refazer questões usando funções
+#TODO:função para quebrar número de 3 digitos

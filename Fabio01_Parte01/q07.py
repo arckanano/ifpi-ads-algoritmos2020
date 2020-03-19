@@ -12,3 +12,5 @@ diferenca = num2 - num3
 # resultado
 print(f'Soma de {num1} + {num2} = {soma}')
 print(f'Diferença de {num2} e {num3} = {diferenca}')
+
+#TODO:função para quebrar número de 3 digitos
