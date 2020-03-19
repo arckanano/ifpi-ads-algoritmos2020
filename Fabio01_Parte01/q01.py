@@ -1,8 +1,13 @@
 # 1 - Leia uma velocidade em m/s, calcule e escreva esta velocidade em km/h. (Vkm/h = Vm/s * 3.6)
 #
-# entradas
-velocidade_metro_segundo = float(input("Velocidade em m/s: "))
-# conversor de velocidade
-metro_segundo_para_kilometro_hora = velocidade_metro_segundo * 3.6
-# resultado
-print(f'{velocidade_metro_segundo} m/s em km/h = {metro_segundo_para_kilometro_hora} km/h ')
+def main():
+    velocidade = float(input("Velocidade em m/s: "))
+    vel_em_kmph = converter(velocidade)
+    print(f'{velocidade} m/s = {vel_em_kmph} kmph')
+
+def converter(v):
+    r = v * 3.6
+    return r
+
+
+main()
