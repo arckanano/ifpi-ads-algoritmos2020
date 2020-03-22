@@ -1,22 +1,25 @@
+import functions
+
+# Leia os coeficientes (A, B e C) de uma equações de 2° grau e escreva suas raízes. Vale lembrar que o coeficiente A deve ser diferente de 0 (zero)
+
 def main():
 
     print("Inserir valores das variaveis:")
-    A = float(input("A = "))
-    B = float(input("B = "))
-    C = float(input("C = "))
+    a = float(input("A = "))
+    b = float(input("B = "))
+    c = float(input("C = "))
 
+    delta = functions.delta(a, b, c)
 
-    delta = ((B ** 2) -4 * A * C)
-
-    if A == 0:
+    if a == 0:
         print("Impossivel calcular")
     elif delta < 0:
         print("Impossivel calcular")
     else:
-        x1 = (-B + (delta ** (1 / 2))) / (2 * A)
-        x2 = (-B - (delta ** (1 / 2))) / (2 * A)
-        print("Raiz 1 = {:.5f}".format(x1))
-        print("Raiz 2 = {:.5f}".format(x2))
+        x1 = functions.raiz1(a, b, c)
+        x2 = functions.raiz2(a, b, c)
+        print(f"Raiz 1 = {x1:.5f}")
+        print(f"Raiz 2 = {x2:.5f}")
 
 
 main()

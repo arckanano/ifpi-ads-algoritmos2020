@@ -1,4 +1,7 @@
 def main():
+    '''
+    Leia os 3 (três) lados de um triângulo e identifique sua hipotenusa e seus catetos
+    '''
 
     lado1 = int(input("Lado 1: "))
     lado2 = int(input("Lado 2: "))

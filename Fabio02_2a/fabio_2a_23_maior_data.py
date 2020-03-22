@@ -1,3 +1,5 @@
+# Leia 2 datas (cada data é composta por 3 variáveis inteiras: dia, mês e ano) e escreva qual delas é a mais recente
+
 def main():
 
     print("Insira a primeira data!")

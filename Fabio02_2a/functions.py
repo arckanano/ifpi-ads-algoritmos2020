@@ -43,3 +43,13 @@ def calculo_imc(altura, peso):
         return print("obeso")
     else:
         return print("Obesidade morbida")
+
+# Inicio funções para calculo de equações do 2o grau
+def delta(a, b, c):
+    return ((b ** 2) - 4 * a * c)
+
+def raiz1(a, b, c):
+    return (-b + (delta(a, b, c) ** (1 / 2))) / (2 * a)
+
+def raiz2(a, b, c):
+    return (-b - (delta(a, b, c) ** (1 / 2))) / (2 * a)
