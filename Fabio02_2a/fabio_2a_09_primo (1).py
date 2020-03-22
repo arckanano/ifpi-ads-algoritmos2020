@@ -1,3 +1,6 @@
+'''
+
+'''
 def main():
     # Utilizando o crivo de erastótenes
     n = int(input("numero: "))

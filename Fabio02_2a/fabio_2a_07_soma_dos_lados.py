@@ -1,3 +1,4 @@
+# 
 def main():
 
     lado1 = int(input("Lado 1: "))

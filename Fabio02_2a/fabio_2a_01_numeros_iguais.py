@@ -1,3 +1,4 @@
+
 def main():
 
     num1 = int(input("Número 01: "))

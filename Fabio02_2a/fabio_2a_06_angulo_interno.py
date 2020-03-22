@@ -1,3 +1,4 @@
+# 
 def main():
 
     ang1 = int(input("ang1: "))
