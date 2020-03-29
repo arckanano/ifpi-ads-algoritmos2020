@@ -1,38 +1,43 @@
 def main():
 
-    sal = float(input("Salário funcionário: "))
+    salario = float(input("Salário funcionário: "))
 
-    if sal >= 1500:
-        aumento = sal / 100 * 5
-        nsal = sal+aumento
-        print("Salário: %0.2f" % sal)
+    if salario >= 1500:
+        aumento = valor_aumento(salario, 5)
+        novo_salario = salario + aumento
+        print("Salário: %0.2f" % salario)
         print("aumento de 5%")
         print("Aumento: %0.2f " % aumento)
-        print("Novo salário: %0.2f " % nsal)
+        print("Novo salário: %0.2f " % novo_salario)
 
-    elif sal > 700 and sal < 1500:
-        aumento = sal / 100 * 10
-        nsal = sal+aumento
-        print("Salário: %0.2f" % sal)
+    elif salario > 700 and salario < 1500:
+        aumento = valor_aumento(salario, 10)
+        novo_salario = salario + aumento
+        print("Salário: %0.2f" % salario)
         print("aumento de 10%")
         print("Aumento: %0.2f " % aumento)
-        print("Novo salário: %0.2f " % nsal)
+        print("Novo salário: %0.2f " % novo_salario)
 
-    elif sal > 280 and sal <= 700:
-        aumento = sal / 100 * 15
-        nsal = sal+aumento
-        print("Salário: %0.2f" % sal)
+    elif salario > 280 and salario <= 700:
+        aumento = valor_aumento(salario, 15)
+        novo_salario = salario + aumento
+        print("Salário: %0.2f" % salario)
         print("aumento de 15%")
         print("Aumento: %0.2f " % aumento)
-        print("Novo salário: %0.2f " % nsal)
+        print("Novo salário: %0.2f " % novo_salario)
         
-    elif sal <= 280:
-        aumento = sal / 100 * 20
-        nsal = sal+aumento
-        print("Salário: %0.2f" % sal)
+    elif salario <= 280:
+        # aumento = salario / 100 * 20
+        aumento = valor_aumento(salario, 20)
+        novo_salario = salario + aumento
+        print("Salário: %0.2f" % salario)
         print("aumento de 20%")
         print("Aumento: %0.2f " % aumento)
-        print("Novo salário: %0.2f " % nsal)
+        print("Novo salário: %0.2f " % novo_salario)
+    
+def valor_aumento(salario, porc):
+    aumento = salario / 100 * porc
+    return aumento
 
 
 main()
