@@ -24,6 +24,7 @@ def main():
         desconto = valor_total_da_compra * 0.10
         valor_total_da_compra = valor_total_da_compra - desconto
 
+    print(20*'-')
     print(f'Valor de morango: {valor_de_morango:.2f}')
     print(f'Valor de maçã: {valor_de_maca:.2f}')
     print(f'Valor do desconto: {desconto:.2f}')

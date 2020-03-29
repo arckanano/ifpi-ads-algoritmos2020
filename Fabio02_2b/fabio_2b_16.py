@@ -41,8 +41,8 @@ def main():
     print(f'Tipo de carne: {carne}')
     print(f'Quantidade_de_carne: {quantidade_de_carne} Kg')
     print(f'Modo de pagamento: {meio_de_pagamento}')
-    print(f'Valor da compra (s/desc): {total_da_compra}')
-    print(f'Desconto = {desconto}')
+    print(f'Valor da compra (s/desc): {total_da_compra:.2f}')
+    print(f'Desconto = {desconto:.2f}')
     print('#####################')
     print(f'Valor Total: {valor_total_da_compra:.2f}')
 

@@ -1,23 +1,34 @@
-#TODO: ERROU, ERROU FEIO, ERROU RUDE!!!!
+#TODO: criar variavel S para armazenar qtd de respostas positivas
 def main():
 
-    p1 = str(input("Telefonou para a vítima ?: "))
-    p2 = str(input("Esteve no local do crime ?: "))
-    p3 = str(input("Mora perto da vítima ?: "))
-    p4 = str(input("Devia para a vítima ?: "))
-    p5 = str(input("Já trabalhou com a vítima ?: "))
+    p1 = str(input("Telefonou para a vítima ?: ")).lower()
+    p2 = str(input("Esteve no local do crime ?: ")).lower()
+    p3 = str(input("Mora perto da vítima ?: ")).lower()
+    p4 = str(input("Devia para a vítima ?: ")).lower()
+    p5 = str(input("Já trabalhou com a vítima ?: ")).lower()
 
-    if p1 != p2 and p1 != p3 and p1 != p4 and p1 != p5 or p2 != p3 and p2 != p4 and p2 != p5 or p3 != p4 and p3 != p5 or p4 != p5:
-        print("Inocente")
-    elif p1 == p2 or p1 == p3 or p1 == p4 or p1 == p5 or p2 == p3 or p2 == p4 or p2 == p5 or p3 == p4 or p3 == p5 or p4 == p5:
-        print("Suspeita")
-    elif p1 == p2 == p3 or p1 == p2 == p4 or p1 == p2 == p5 or p2 == p3 == p4 or p2 == p3 == p5 or p3 == p4 == p5:
-        print("Cumplice")
-    elif p1 == p2 == p3 == p4 or p1 == p2 == p3 == p5 or p1 == p2 == p4 == p5 or p1 == p3 == p4 == p5 or p2 == p3 == p4 == p5:
-        print("Cumplice")
-    elif p1 == p2 and p1 == p3 and p1 == p4 and p1 == p5:
-        print("Culpado")
+    sim = 0
+    if p1 == 's':
+        sim += 1
+    if p2 == 's':
+        sim += 1
+    if p3 == 's':
+        sim += 1
+    if p4 == 's':
+        sim += 1
+    if p5 == 's':
+        sim += 1
 
-
+    if sim == 2:
+        status = 'suspeita'
+    elif sim == 3 or sim == 4:
+        status = 'cumplice'
+    elif sim == 5:
+        status = 'culpado'
+    else:
+        status = 'inocente'
+        
+    print(f'Status = {status}')
+    
 
 main()
