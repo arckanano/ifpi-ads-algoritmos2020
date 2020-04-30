@@ -14,16 +14,27 @@ def main():
     '''
 
     salario = float(input("Inserir salário: "))
-    # tabela_ir_corrigida(salario)
 
-    ir_faixa_1 = (salario - 1903.99) * 0.075
-    ir_faixa_2 = ir_faixa_1 + (3751.05 - 2826.66) * 0.15
-    ir_faixa_3 = (4664.68 - 3751.06) * 0.225
-    ir_faixa_4 = (salario - 4664.69) * 0.275
+    # Valor maximo pago por cada faixa
+    max_faixa_2 = (2826.65 - 1903.99) * 0.075
+    max_faixa_3 = (3751.05 - 2826.66) * 0.15
+    max_faixa_4 = (4664.68 - 3751.06) * 0.225
+    # max_faixa_4 = (salario - 4664.69) * 0.275
+
+
+    ir_faixa_2 = (salario - 1903.98) * 0.075
+    ir_faixa_3 = ((salario - 2826.66) * 0.15) + max_faixa_2
+    ir_faixa_4 = ((salario - 3751.06) * 0.225) + max_faixa_3 + max_faixa_2
+    ir_faixa_5 = ((salario - 4664.69) * 0.275) + max_faixa_4 + max_faixa_3 + max_faixa_2
     
-    tabela_ir_vigente(salario, ir_faixa_1, ir_faixa_2, ir_faixa_3, ir_faixa_4)
+    print('faixa 2', ir_faixa_2)
+    print('faixa 3', ir_faixa_3)
+    print('faixa 4', ir_faixa_4)
+    print('faixa 4', ir_faixa_5)
+    
+    # tabela_ir_vigente(salario, ir_faixa_2, ir_faixa_3, ir_faixa_4)
 
-def tabela_ir_vigente(salario, ir_faixa_1, ir_faixa_2, ir_faixa_3, ir_faixa_4):
+def tabela_ir_vigente(salario, ir_faixa_2, ir_faixa_3, ir_faixa_4):
     valor_a_pagar = 0
     if salario <= 1903.98:
         print('Isento')
