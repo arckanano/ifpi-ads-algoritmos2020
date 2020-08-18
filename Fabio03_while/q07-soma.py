@@ -12,7 +12,7 @@ def main():
         else:
             print(f'{contador} +', end=' ')
         contador += 1
-    
+
     print(f'{soma}')
 
 

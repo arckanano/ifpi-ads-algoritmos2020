@@ -13,6 +13,6 @@ def resultado(n):
         tot += 1
 
     print(f'Maior número: {maior}')
-    
+
 
 main()

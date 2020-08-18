@@ -10,4 +10,5 @@ def main():
         contador += razao
     print('ACABOU!!!')
 
+
 main()

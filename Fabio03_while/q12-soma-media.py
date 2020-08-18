@@ -11,9 +11,9 @@ def resultado(n):
         tot += 1
         soma += tot
         media = soma / tot
-    
+
     print(f'Soma: {soma}')
     print(f'Média: {media}')
-    
+
 
 main()

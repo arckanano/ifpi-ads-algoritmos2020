@@ -9,4 +9,5 @@ def main():
         print(contador, end=' ')
         contador *= razao
 
+
 main()

@@ -10,7 +10,8 @@ def main():
         c = a+b
         # a = b
         # b = c
-        a,b = b,c
+        a, b = b, c
         contador += 1
+
 
 main()

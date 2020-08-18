@@ -8,7 +8,6 @@ def main():
             s = contador + n
             print(f'{s} + {contador} = {s}')
             contador += 1
-    
 
     def sub(n=10):
         contador = 1
@@ -17,7 +16,6 @@ def main():
             print(f'{n} - {contador} = {s}')
             contador += 1
 
-
     def multiplicar(n=10):
         contador = 1
         while contador <= n:
@@ -25,14 +23,12 @@ def main():
             print(f'{n} * {contador} = {m}')
             contador += 1
 
-
     def div(n=10):
         contador = 1
         while contador <= n:
             d = n // contador
             print(f'{n} / {contador} = {d}')
             contador += 1
-
 
     def resultados():
         print('--- Tabuada de soma ---')
@@ -43,7 +39,6 @@ def main():
         multiplicar()
         print('--- Tabuada de divisão ---')
         div()
-
 
     resultados()
 

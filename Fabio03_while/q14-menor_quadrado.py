@@ -3,6 +3,7 @@ def main():
     n = int(input("Número: "))
     resultado(n)
 
+
 def resultado(n):
     perfeito = 0
     while n > 0:

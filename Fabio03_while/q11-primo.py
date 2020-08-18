@@ -4,7 +4,8 @@ def main():
     fim = int(input('Limite superior: '))
     resultado(inicio, fim)
 
-def resultado(a,b):
+
+def resultado(a, b):
 
     #TODO: FAZER
 main()

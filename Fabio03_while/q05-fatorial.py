@@ -8,5 +8,6 @@ def main():
         a *= contador
         contador -= 1
     print(f'{n}! = {a}')
-    
+
+
 main()
