@@ -1,12 +1,12 @@
 def main():
 
-    #n = int(input('Numero: '))
-    n = 5
+    n = int(input('Numero: '))
 
-    while True:
-        print(n)
-        n -= 1
-        if n < 1:
-            return n
+    contador = n
+    a = 1
+    while contador > 1:
+        a *= contador
+        contador -= 1
+    print(f'{n}! = {a}')
     
 main()
