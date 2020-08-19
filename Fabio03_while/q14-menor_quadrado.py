@@ -5,14 +5,13 @@ def main():
 
 
 def resultado(n):
-    perfeito = 0
+    perfeito = 0 # contador
     while n > 0:
-        quadrado = n ** 0.5
-        # print(quadrado / 1)
-        if quadrado % 1 == 0:
+        quadrado = n ** 0.5 # tirar raiz quadrada
+        if quadrado % 1 == 0: # verifica o resto da divisão
             print(f'{n} - {quadrado}')
-            perfeito += 1
-            if perfeito == 1:
+            perfeito += 1 # incrementa o contador
+            if perfeito == 1: # para a função se achar o primeiro resultado
                 break
         n -= 1
 

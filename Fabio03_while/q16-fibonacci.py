@@ -2,7 +2,7 @@ def main():
 
     n = int(input('Número de termos: '))
 
-    contador = 0
+    contador = 1
     a = 0
     b = 1
     while contador <= n:
