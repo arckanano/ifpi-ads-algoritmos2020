@@ -5,9 +5,8 @@ def main():
     contador = 1
     y = 0
     soma = 0
-    aux = n
     while contador <= n:
-        z = aux - y
+        z = n - y
         x = contador / z
         print(f'{contador} / {z}')
         soma += x

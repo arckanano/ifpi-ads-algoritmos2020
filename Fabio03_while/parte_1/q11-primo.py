@@ -5,7 +5,14 @@ def main():
     resultado(inicio, fim)
 
 
-def resultado(a, b):
+def resultado(inicio, fim):
+    contador = 1
+    divisores = 0
+    while contador <= fim:
+        if inicio % contador == 0:
+            divisores += 1
+        contador += 1
 
-    #TODO: FAZER
+    print(divisores)
+
 main()
