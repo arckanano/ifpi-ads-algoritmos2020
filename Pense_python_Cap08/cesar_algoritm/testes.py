@@ -5,7 +5,7 @@ def main():
     --- Este código codifica a palavra de acordo com determinado numero de passos que o usuário inserir.
     --- O código não funciona para letras fora do alfabeto latino.
     --- O código não funciona para palavras/letras acentuadas, mesmo que pertençam ao alfabeto latino.
-    --- Até o momento o código não funciona vira caso seja inserido algum número.
+    --- Até o momento o código não funciona caso seja inserido algum número.
     '''
 
     palavra = input('Palavra: ')
@@ -19,40 +19,28 @@ def main():
 
 def confere(palavra, passo):
     for letra in palavra:
-        if letra_minuscula(letra) == True:
+        if (ord(letra) == 32):
+            print(' ', end='')
+        elif letra_minuscula(letra) == True:
             virar_minuscula(letra, passo)
-        if letra_maiuscula(letra) == True:
+        elif letra_maiuscula(letra) == True:
             virar_maiuscula(letra, passo)
-        # elif (ord(letra) + passo) > 122: # Para letras minusculas
-        #     a = (ord(letra) + passo) - 26
-        #     print(chr(a), end=' ')
-        # elif (ord(letra) + passo) > 90:
-        #     a = (ord(letra) + passo) - 26
-        #     print(chr(a), end=' ')
-        # else:
-        #     # transforma os códigos de volta em letras já criptografado
-        #     print(chr(ord(letra) + passo), end=' ')
 
 
 def virar_minuscula(letra, passo):
-    if letra == ' ':
-        print(' ', end='')
-    elif (ord(letra) + passo) > 122:  # Para letras minusculas
+    if (ord(letra) + passo) > 122:
         a = (ord(letra) + passo) - 26
-        print(chr(a), end=' ')
+        print(chr(a), end='')
     else:
-        print(chr(ord(letra) + passo), end=' ')
+        print(chr(ord(letra) + passo), end='')
 
 
 def virar_maiuscula(letra, passo):
-    if letra == ' ':
-        print(' ', end='')
-    elif (ord(letra) + passo) > 90:  # Para letras minusculas
+    if (ord(letra) + passo) > 90:
         a = (ord(letra) + passo) - 26
         print(chr(a), end=' ')
     else:
         print(chr(ord(letra) + passo), end=' ')
-
 
 
 def letra_minuscula(letra):
