@@ -5,7 +5,6 @@ def main():
     --- Este código codifica a palavra de acordo com determinado numero de passos que o usuário inserir.
     --- O código não funciona para letras fora do alfabeto latino.
     --- O código não funciona para palavras/letras acentuadas, mesmo que pertençam ao alfabeto latino.
-    --- Até o momento o código não funciona caso seja inserido algum número.
     '''
 
     palavra = input('Palavra: ')
