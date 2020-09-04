@@ -20,7 +20,9 @@ def main():
 def confere(palavra, passo):
     for letra in palavra:
         if (ord(letra) == 32):
-            print(' ', end='')
+            print(letra, end='')
+        elif numero(letra) == True:
+            print(letra, end='')
         elif letra_minuscula(letra) == True:
             virar_minuscula(letra, passo)
         elif letra_maiuscula(letra) == True:
@@ -52,6 +54,13 @@ def letra_minuscula(letra):
 
 def letra_maiuscula(letra):
     if (ord(letra) >= 65 and ord(letra) <= 90):
+        return True
+    else:
+        return False
+
+
+def numero(letra):
+    if (ord(letra) >= 48 and ord(letra) <= 57):
         return True
     else:
         return False
