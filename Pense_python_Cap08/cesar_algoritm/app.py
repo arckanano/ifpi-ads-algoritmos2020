@@ -3,15 +3,6 @@ def main():
     palavra = input('Palavra: ')
     passo = int(input('avançar quantas letras? '))
 
-    # for letra in palavra:
-    #     print(letra, end='')  # teste para saber se está tudo funcionando
-
-    # for letra in palavra:
-    #     print(ord(letra), end=' ')  # Pegar código equivalente na tabela ASCII
-
-    # for letra in palavra: # avança determinado número de caracteres
-    #     print(ord(letra) + passo, end=' ')
-
     print('-'*30)
     print('--- SUA PALAVRA CIFRADA ---')
     for letra in palavra:
