@@ -10,14 +10,18 @@ def main():
     palavra = input('Palavra: ')
     passo = int(input('avançar quantas letras? '))
 
+<<<<<<< Updated upstream
     print('-'*30)
     print('--- SUA PALAVRA CIFRADA ---')
 
     confere(palavra, passo)
 
+=======
+>>>>>>> Stashed changes
 
 def confere(palavra, passo):
     for letra in palavra:
+<<<<<<< Updated upstream
         if (ord(letra) == 32):
             print(letra, end='')
         elif numero(ord(letra)) == True:
@@ -63,6 +67,18 @@ def numero(letra):
         return True
     else:
         return False
+=======
+        if letra == ' ':
+            print(' ', end='')
+        elif (ord(letra) + passo) > 122:
+            a = ord(letra) + passo # soma os valor ORD da letra com o passo
+            b = a - 122 # Verificar o quanto passou além do último caractere 'z'
+            c = b + 96 # Soma a diferença com o início e gera o novo caractere
+            print(chr(c), end=' ') # converte para caractere.
+        else:
+            # transforma os códigos de volta em letras já criptografado
+            print(chr(ord(letra) + passo), end=' ')
+>>>>>>> Stashed changes
 
 
 main()
