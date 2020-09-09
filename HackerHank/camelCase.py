@@ -13,3 +13,6 @@ def camelcase(s):
 
 
 main()
+
+# Solução enviada ao HackerHank
+# https://www.hackerrank.com/challenges/camelcase/submissions/code/178618925
