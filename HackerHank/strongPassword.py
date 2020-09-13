@@ -1,13 +1,15 @@
 def main():
 
+    n = int(input('Tamanho da senha: '))
     senha = input('Senha: ')
-    conferir(senha)
+    conferir(senha, n)
 
 
-def conferir(senha):
+def conferir(senha, n):
     tudo_ok = 0
     o_que_falta = ''
     if len(senha) < 6:
+        print(f'{senha}')
         print(f'A senha deve possuir pelo menos 6 dígitos!')
         # return False
     else:
