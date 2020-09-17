@@ -1,3 +1,4 @@
+# Opção 1
 def palavras_maior_que_vinte(lista):
     for palavra in lista:
         linha = palavra.strip()
@@ -5,6 +6,7 @@ def palavras_maior_que_vinte(lista):
             print(linha)
 
 
+# Opção 2
 def has_no_letter(lista, letra):
     total_palavras = 0
     palavras_sem_letra = 0
@@ -22,35 +24,25 @@ def has_no_letter(lista, letra):
     print(f'Percentual de palavras sem a letra "{letra}": {percentual:.2f}')
 
 
-def avoids(letra):
-    arquivo = open('words.txt')
-    total_de_palavras = 0
-    palavras_sem_letra = 0
+# Opção 3
+def avoids(palavra, proibidas):
+    for letra in palavra:
+        if letra in proibidas:
+            return False
+    return True
 
-    for palavra in arquivo:
-        linha = palavra.strip()
-        total_de_palavras += 1
-        for l in letra:
-            if l not in linha:
-                palavras_sem_letra += 1
 
-    # print(palavras_sem_letra)
-    return palavras_sem_letra
+# Opção 4
+def uses_only(palavra, letras):
+    for l in palavra:
+        if l not in letras:
+            return False
+    return True
 
-    arquivo.close()
 
-# def avoids(lista, letras):
-#     tot_letras = 0
-#     nao_tem_letra = 0
-#     for l in letras:
-#         for palavra in lista:
-#             linha = palavra.strip()
-#             if l in linha:
-#                 tot_letras += 1
-#             else:
-#                 nao_tem_letra += 1
-
-#     print(nao_tem_letra)
-
-#     # if tot_letras == 0:
-#     #     return True
+# Opção 5
+def uses_all(palavra, obrigatorias):
+    for letra in obrigatorias:
+        if letra not in palavra:
+            return False
+    return True
