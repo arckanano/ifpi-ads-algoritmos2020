@@ -4,6 +4,7 @@ def palavras_maior_que_vinte(lista):
         linha = palavra.strip()
         if len(linha) > 20:
             print(linha)
+    lista.close()
 
 
 # Opção 2
@@ -22,15 +23,22 @@ def has_no_letter(lista, letra):
     print(f'Total de palavras: {total_palavras}')
     print(f'Total de palavras sem a letra "{letra}": {palavras_sem_letra}')
     print(f'Percentual de palavras sem a letra "{letra}": {percentual:.2f}')
-
+    lista.close()
 
 # Opção 3
-def avoids(palavra, proibidas):
-    for letra in palavra:
-        if letra in proibidas:
-            return False
-    return True
+def avoids(lista, p):
+    tem = 0
+    for palavra in lista:
+        linha = palavra.strip()
+        print(linha)
+        # for c in p:
+        #     if c in linha:
+        #         tem += 1
+        # if tem == 0:
+        #     print('Não tem as letras: ',linha)
+        # tem = 0
 
+    lista.close()
 
 # Opção 4
 def uses_only(palavra, letras):

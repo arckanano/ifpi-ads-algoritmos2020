@@ -2,7 +2,7 @@ import modules
 
 
 def main():
-    arquivo = open('words.txt')
+    # arquivo = open('words.txt')
 
     menu = '##### WordPplay #####\n' \
         + '1 - Palavras com + de 20 letras\n' \
@@ -18,20 +18,34 @@ def main():
 
     while opcao != 0:
         if opcao == 1:
+            arquivo = open('words.txt')
+            
             modules.palavras_maior_que_vinte(arquivo)
+        
         elif opcao == 2:
+            arquivo = open('words.txt')
+
             letra = input('Eu quero as palavras que não tenham a letra: ')
             modules.has_no_letter(arquivo, letra)
+        
         elif opcao == 3:
+            arquivo = open('words.txt')
+
             letras = input('Palavras sem as letras: ')
             modules.avoids(arquivo, letras)
+        
         elif opcao == 4:
+            arquivo = open('words.txt')
             modules.uses_only(palavra, letras)
+        
         elif opcao == 5:
+            arquivo = open('words.txt')
             modules.uses_all(palavra, letras)
+        
         else:
             print('Opção inválida!')
-
+        
+        print()
         input('continuar <enter>...')
         opcao = int(input(menu))
 
