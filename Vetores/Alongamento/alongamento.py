@@ -1,11 +1,16 @@
 qtd_num = int(input("Quantidade de números: "))
-vetor = []
 
-i = 0
-while i < qtd_num:
-    novo_numero = int(input("Numero: "))
-    vetor.append(novo_numero)
-    i += 1
+
+def cria_vetor(qtd):
+    vetor = [-1] * qtd
+    i = 0
+    for i in range(len(vetor)):
+        vetor[i] = int(input("Numero: "))
+    # while i < qtd:
+    #     novo_numero = int(input("Numero: "))
+    #     vetor.append(novo_numero)
+    #     i += 1
+    return vetor
 
 
 def dados(vetor):
@@ -57,12 +62,13 @@ def positivo_negativo(numero):
     else:
         return False
 
+vet = cria_vetor(qtd_num)
 
-print(f'\nVetor original = {vetor}')
+print(f'\nVetor original = {vet}')
 print(f'\nDados do Vetor original: ')
-dados(vetor)
+dados(vet)
 
-x = dobra_divide(vetor)
+x = dobra_divide(vet)
 
 print(f'\nNovo Vetor {x}')
 print(f'\nDados do Novo vetor: ')
