@@ -10,4 +10,11 @@ def adiciona_valor(vetor):
     return vetor
 
 
-    
+def inverte_vetor(vetor, vetorVazio):
+	novo_vetor = vetorVazio
+	pos = 0
+	for i in range(len(vetor)-1, -1, -1):
+		novo_vetor[pos] = vetor[i]
+		pos += 1
+	return novo_vetor
+	
