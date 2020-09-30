@@ -73,7 +73,7 @@ def main():
             if r == 0:
                 ordenar_lista(lista)
             else:
-                ordenar_lista(lista, r)
+                ordenar_lista(lista, r=True)
 
         elif opcao == 0:  # sair do while
             break
@@ -203,7 +203,7 @@ def apagar_lista(lista):
 
 
 def ordenar_lista(lista, r=False):
-    if r == 1:
+    if r == True:
         lista.sort(reverse=True)
     else:
         lista.sort()
