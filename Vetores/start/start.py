@@ -16,10 +16,10 @@ def main():
     menu += '\n 13 - Média dos valores'
     menu += '\n 14 - Contar ocorrência do valor X' # A fazer
     menu += '\n 15 - Dobrar todos os valores'
-    menu += '\n 16 - Dividir todos os valores'# A fazer
-    menu += '\n 17 - Dobrar valores múltiplos de N'# A fazer
-    menu += '\n 18 - Apagar todos os valores'# A fazer
-    menu += '\n 19 - Contar ocorrência do valor X'# A fazer
+    menu += '\n 16 - Dividir todos os valores'
+    menu += '\n 17 - Dobrar valores múltiplos de N'
+    menu += '\n 18 - Apagar todos os valores'
+    menu += '\n 19 - Ordenar a lista (crescente/decrescente)'
     menu += '\n 0 - Sair '
     menu += '\n\n Opção >>> '
 
@@ -63,9 +63,17 @@ def main():
         elif opcao == 16:
             n = int(input('Dividir por quanto?: '))
             dividir_todos_valores(lista, n)
-        # elif opcao == 17:
-        # elif opcao == 18:
-        # elif opcao == 19:
+        elif opcao == 17:
+            n = int(input('Divisor: '))
+            dobra_multiplos(lista, n)
+        elif opcao == 18:
+            apagar_lista(lista)
+        elif opcao == 19:
+            r = int(input('Invertido?[0] = Não / [1] = Sim: '))
+            if r == 0:
+                ordenar_lista(lista)
+            else:
+                ordenar_lista(lista, r)
 
         elif opcao == 0:  # sair do while
             break
@@ -175,6 +183,31 @@ def dividir_todos_valores(lista, num):
         lista[i] = lista[i] / num
     
     print(f'A lista com os valores dividos é: {lista}')
+
+    input('<enter> to continue...')
+
+def dobra_multiplos(lista, num):
+    for i in range(len(lista)):
+        if lista[i] % num == 0:
+            lista[i] *= 2
+    
+    print(f'Resultado {lista}')
+    input('<enter> to continue...')
+
+
+def apagar_lista(lista):
+    lista.clear()
+    print('Todos os valores foram apagados!')
+
+    input('<enter> to continue...')
+
+
+def ordenar_lista(lista, r=False):
+    if r == 1:
+        lista.sort(reverse=True)
+    else:
+        lista.sort()
+    print(f'Lista ordenada: {lista}')
 
     input('<enter> to continue...')
 
