@@ -8,7 +8,18 @@ def main():
     menu += '\n 5 - Remover de Posição Específica'
     menu += '\n 6 - Exibir lista atual'
     menu += '\n 7 - Inserir item na posição'
-    menu += '\n N - <Crie diversas opções com os dados> '
+    menu += '\n 8 - Contar Pares'
+    menu += '\n 9 - Contar ímpares'
+    menu += '\n 10 - Contar Primos' # A fazer
+    menu += '\n 11 - Contar Positivos' # A fazer
+    menu += '\n 12 - Contar Zerados' # A fazer
+    menu += '\n 13 - Média dos valores'
+    menu += '\n 14 - Contar ocorrência do valor X' # A fazer
+    menu += '\n 15 - Dobrar todos os valores'
+    menu += '\n 16 - Dividir todos os valores'# A fazer
+    menu += '\n 17 - Dobrar valores múltiplos de N'# A fazer
+    menu += '\n 18 - Apagar todos os valores'# A fazer
+    menu += '\n 19 - Contar ocorrência do valor X'# A fazer
     menu += '\n 0 - Sair '
     menu += '\n\n Opção >>> '
 
@@ -32,8 +43,29 @@ def main():
             exibir_lista(lista)
         elif opcao == 7:
             pos = int(input('Posição: '))
-            item = input('Item: ')
+            item = int(input('Item Inteiro: '))
             inserir_posicao_especifica(lista, pos, item)
+        elif opcao == 8:
+            conta_pares(lista)
+        elif opcao == 9:
+            conta_impares(lista)
+        # elif opcao == 10:
+
+        # elif opcao == 11:
+        # elif opcao == 12:
+        elif opcao == 13:
+            media(lista)
+        elif opcao == 14:
+            v = int(input('Número de ocorrência do valor: '))
+            conta_valor(lista, v)
+        elif opcao == 15:
+            dobrar_todos_valores(lista)
+        elif opcao == 16:
+            n = int(input('Dividir por quanto?: '))
+            dividir_todos_valores(lista, n)
+        # elif opcao == 17:
+        # elif opcao == 18:
+        # elif opcao == 19:
 
         elif opcao == 0:  # sair do while
             break
@@ -95,5 +127,56 @@ def inserir_posicao_especifica(lista, posicao, item):
 
     input('<enter> to continue...')
 
+
+def conta_pares(lista):
+    pares = 0
+    for i in lista:
+        if i % 2 == 0:
+            pares += 1
+    print(f'Total de pares: {pares}')
     
+    input('<enter> to continue...')
+
+
+def conta_impares(lista):
+    impares = 0
+    for i in lista:
+        if i % 2 != 0:
+            impares += 1
+    print(f'Total de ímpares: {impares}')
+    
+    input('<enter> to continue...')
+
+
+def media(lista):
+    x = sum(lista) / len(lista)
+    print(f'A média dos valores é {x}')
+    
+    input('<enter> to continue...')
+
+def conta_valor(lista, valor):
+    x = lista.count(valor)
+    print(f'O valor {valor} aparece {x}x na lista.')
+
+    input('<enter> to continue...')
+
+
+def dobrar_todos_valores(lista):
+    for i in range(len(lista)):
+        lista[i] *= 2
+    
+    print(f'A lista com os valores dobrados {lista}')
+
+    input('<enter> to continue...')
+
+
+def dividir_todos_valores(lista, num):
+    for i in range(len(lista)):
+        lista[i] = lista[i] / num
+    
+    print(f'A lista com os valores dividos é: {lista}')
+
+    input('<enter> to continue...')
+
+
 main()
