@@ -31,11 +31,44 @@ def verifica_repetido(vetor):
 
 # def inter(vetorA, vetorB, vazio):
 def inter(vetorC, vazio):
-	novo_vetor = vazio
-	for i in range(len(vetorC)):
-		if i >= len(vetorC)-1:
-			break
-		elif vetorC[i] == vetorC[i+1]:
-			novo_vetor[i] == vetorC[i]
+    novo_vetor = vazio
+    for i in range(len(vetorC)):
+        if i >= len(vetorC)-1:
+            break
+        elif vetorC[i] == vetorC[i+1]:
+            novo_vetor[i] == vetorC[i]
 
-	return novo_vetor
+    return novo_vetor
+
+
+def binToDec(vetor):
+    soma = 0
+    n = 0
+    for i in range(len(vetor)-1, -1, -1):
+        p = 2 ** n
+        r = p * vetor[i]
+        soma += r
+        n += 1
+    # print(soma)
+    return soma
+
+
+def binToHex(vet):
+    r = ''
+    h = [10, 'A', 11, 'B',12,'C',13,'D',14,'E',15,'F']
+    vet1 = []
+    for i in range(len(vet)):
+        vet1.append(vet[i])
+        if len(vet1) % 4 == 0:
+            print(vet1)
+            d = binToDec(vet1)
+            if d > 9:
+                for i in range(len(h)):
+                    if h[i] == d:
+                        r += h[i+1]
+            else:
+                r += str(d)
+            vet1.clear()
+            
+    return r
+
