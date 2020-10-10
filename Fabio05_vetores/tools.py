@@ -69,3 +69,15 @@ def binToHex(vet):
             vet1.clear()
 
     return r
+
+
+def maior_menor_elemento(meu_vetor):
+    menor = meu_vetor[0]
+    maior = meu_vetor[0]
+    for i in range(len(meu_vetor)):
+        if meu_vetor[i] > maior:
+            maior = meu_vetor[i]
+        elif meu_vetor[i] < menor:
+            menor = meu_vetor[i]
+
+    print(f'Maior número: {maior}\nMenor número: {menor}')
