@@ -49,18 +49,16 @@ def binToDec(vetor):
         r = p * vetor[i]
         soma += r
         n += 1
-    # print(soma)
     return soma
 
 
 def binToHex(vet):
     r = ''
-    h = [10, 'A', 11, 'B',12,'C',13,'D',14,'E',15,'F']
+    h = [10, 'A', 11, 'B', 12, 'C', 13, 'D', 14, 'E', 15, 'F']
     vet1 = []
     for i in range(len(vet)):
         vet1.append(vet[i])
         if len(vet1) % 4 == 0:
-            print(vet1)
             d = binToDec(vet1)
             if d > 9:
                 for i in range(len(h)):
@@ -69,6 +67,5 @@ def binToHex(vet):
             else:
                 r += str(d)
             vet1.clear()
-            
-    return r
 
+    return r
