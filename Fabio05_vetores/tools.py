@@ -81,3 +81,14 @@ def maior_menor_elemento(meu_vetor):
             menor = meu_vetor[i]
 
     print(f'Maior número: {maior}\nMenor número: {menor}')
+
+
+def ordem_crescente(vetor):
+    for i in range(len(vetor)-1):
+        j = i+1
+        if vetor[i] > vetor[j]:
+            temp = vetor[i]
+            vetor[i] = vetor[j]
+            vetor[j] = temp
+            ordem_crescente(vetor)
+
