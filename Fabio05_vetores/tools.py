@@ -91,4 +91,3 @@ def ordem_crescente(vetor):
             vetor[i] = vetor[j]
             vetor[j] = temp
             ordem_crescente(vetor)
-
