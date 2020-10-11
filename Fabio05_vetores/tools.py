@@ -73,14 +73,18 @@ def binToHex(vet):
 
 def maior_menor_elemento(meu_vetor):
     menor = meu_vetor[0]
+    pos_menor = 0
     maior = meu_vetor[0]
+    pos_maior = 0
     for i in range(len(meu_vetor)):
         if meu_vetor[i] > maior:
             maior = meu_vetor[i]
+            pos_maior = i
         elif meu_vetor[i] < menor:
             menor = meu_vetor[i]
+            pos_menor = i
 
-    print(f'Maior número: {maior}\nMenor número: {menor}')
+    return menor, maior
 
 
 def ordem_crescente(vetor):
