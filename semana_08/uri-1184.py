@@ -24,9 +24,9 @@ def main():
     menu = '\nOPERAÇÃO\n1 - SOMA\n2 - MEDIA\n>>> '
     op = int(input(menu))
     if op == 1:
-        print(f'A soma dos elementos é: {soma}')
+        print(f'A soma dos elementos é: {soma:.1f}')
     elif op == 2:
-        print(f'A media dos elementos é: {media}')
+        print(f'A media dos elementos é: {media:.1f}')
 
 
 main()
