@@ -12,13 +12,14 @@ def main():
     soma = 0
     contador = 0
 
-    c = len(matriz)-1
-    for i in range(0, len(matriz)-1):
-        for j in range(0, c):
+    fim_coluna = len(matriz)-1
+    fim_linha = len(matriz)-1
+    for i in range(fim_linha):
+        for j in range(0, fim_coluna):
             print(matriz[i][j], end=' ')
             soma += matriz[i][j]
             contador += 1
-        c -= 1
+        fim_coluna -= 1
 
     media = soma / contador
     menu = '\nOPERAÇÃO\n1 - SOMA\n2 - MEDIA\n>>> '
