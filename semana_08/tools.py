@@ -115,7 +115,7 @@ def cria_matriz_quadrada_aleatoria(ordem):
     return m_quadrada
 
 
-def cria_matriz_quadrada_aleatoria(ordem):
+def cria_matriz_quadrada(ordem):
     # Cria um novo vetor com outros vetores dentro
     m_quadrada = []
     for i in range(ordem):
