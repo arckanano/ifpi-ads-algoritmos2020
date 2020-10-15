@@ -1,6 +1,8 @@
 from random import randrange, randint
 
 # Criar vetor
+
+
 def cria_vetor(tamanho):
     vetor = [0] * tamanho
     return vetor
@@ -109,5 +111,14 @@ def cria_matriz_quadrada_aleatoria(ordem):
     for i in range(len(m_quadrada)):
         for j in range(len(m_quadrada[i])):
             m_quadrada[i][j] = randrange(10)
-    
+
+    return m_quadrada
+
+
+def cria_matriz_quadrada_aleatoria(ordem):
+    # Cria um novo vetor com outros vetores dentro
+    m_quadrada = []
+    for i in range(ordem):
+        m_quadrada.append(cria_vetor(ordem))
+
     return m_quadrada
