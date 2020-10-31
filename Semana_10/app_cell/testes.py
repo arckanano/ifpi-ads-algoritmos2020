@@ -4,19 +4,38 @@ import pickle
 alunos = []
 pessoas = dbm.open('pessoas.db', 'c')
 
-nome = str(input('Nome: '))
-idade = int(input('Idade: '))
-email = str(input('E-mail: '))
+# nome = str(input('Nome: '))
+# idade = int(input('Idade: '))
+# email = str(input('E-mail: '))
 
-aluno = {'nome':nome, 'idade':idade, 'email':email}
-## Jogar o dicionário gerado dentro da lista de alunos
-alunos.append(aluno)
-pessoas['alunos'] = pickle.dumps(alunos)
+# aluno = {'nome':nome, 'idade':idade, 'email':email}
+# ## Jogar o dicionário gerado dentro da lista de alunos
+# alunos.append(aluno)
 
-print(pessoas.get('alunos'))
-print()
-banco_recuperado = pickle.loads(pessoas.get('alunos'))
-print(banco_recuperado)
+# ## Adicionar a lista de Alunos no banco usando uma chave
+# x = str(input("Nome da chave: "))
+# pessoas[x] = pickle.dumps(alunos)
+
+# ## Fechar o banco para salvar as alterações
+# pessoas.close()
+
+## Reabrindo para fazer a leitura
+pessoas = dbm.open('pessoas.db', 'r')
+
+##
+for key in pessoas:
+    person = pickle.loads(pessoas.get(key))
+    print(person[0]['email'])
+
+## R
+# print(pessoas.get('aluno2'))
+# print()
+# banco_recuperado = pickle.loads(pessoas.get('aluno2'))
+# print(banco_recuperado)
+
+## Fechando banco após a leitura
+pessoas.close()
+
 # aluno_str = pickle.dumps(aluno)
 # print(aluno_str)
 # aluno_recuperado = pickle.loads(aluno_str)
