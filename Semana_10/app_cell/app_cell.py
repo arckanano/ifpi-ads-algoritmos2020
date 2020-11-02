@@ -1,14 +1,6 @@
 import dbm
 import pickle
 
-# Módulo dbm
-# open(fiel,flags='')
-# Tipos de flag
-# flag='r' > default, apenas leitura de db existente.
-# flag='w' > abre para leitura e escrita de db existente.
-# flag='c' > Cria um novo db e abre pra leitura e escrita, caso não existe db. Caso exista db, retorna erro.
-# flag='n' > Sempre cria um novo db, mesmo já existindo um. Leitura e escrita.
-
 
 def main():
 
@@ -27,11 +19,11 @@ def main():
     while True:
         option = int(input(menu))
         if option == 1:
-            novo_celular(celulares_db)
+            novo_celular()
         elif option == 2:
             listar_celulares()
         elif option == 3:
-            pass
+            editar_cadastro()
         elif option == 4:
             apagar_cadastro()
         elif option == 0:
@@ -42,7 +34,9 @@ def main():
             input('ENTER to continue!')
 
 
-def novo_celular(banco):
+def novo_celular():
+    banco = dbm.open('celulares', 'c')
+
     print('Iniciando Novo Cadastro de Celular')
     lista = []
 
@@ -61,7 +55,7 @@ def novo_celular(banco):
 
     # Adicionando a lista ao banco de dados
     # A chave usada para o cadastro é o modelo do aparelho
-    banco[modelo] = pickle.dumps(lista)
+    banco[modelo] = pickle.dumps(celular) # <<<<<<<<<<< alterar para lista
 
     print('--- Celular Cadastrado ---')
     input('-----Pressione ENTER para VOLTAR ao MENU-----')
@@ -74,13 +68,16 @@ def listar_celulares():
 
     print(f'Total de aparelhos cadastrados na base: {len(banco)}')
 
-    filtro = input('Filtro (marca|modelo|processador|ram|memoria): ')
-    if filtro == '':
-        filtro = 'modelo'
-
+    print('Marca\t\tModelo\t\tProcessador\t\tRam\t\tMemoria')
     for key in banco:
         cell = pickle.loads(banco.get(key))
-        print(cell[0][filtro])
+        marca = cell['marca']
+        modelo = cell['modelo']
+        processador = cell['processador']
+        ram = cell['ram']
+        memoria = cell['memoria']
+        print(f'{marca}\t\t{modelo}\t\t{processador}\t\t{ram}\t\t{memoria}')
+        print('-'*90)
 
     banco.close()
 
@@ -88,14 +85,49 @@ def listar_celulares():
     input('-----Pressione ENTER para VOLTAR ao MENU-----')
 
 
-
 def editar_cadastro():
     banco = dbm.open('celulares', 'c')
 
-    
+    edit = input('Modelo a ser alterado: ')
+    a = pickle.loads(banco[edit])
 
+    # Backup dos dados
+    bkp_marca = a['marca']
+    bkp_modelo = a['modelo']
+    bkp_processador = a['processador']
+    bkp_ram = a['ram']
+    bkp_memoria = a['memoria']
+
+    # deletando a chave
+    del(banco[edit])
+
+    # Selecionando item a ser alterado
+    while True:
+        print('Item a ser alterado:')
+        item_para_alterar = int(input('1 - marca\n2 - modelo\n3 - processador\n4 - ram\n5 - memoria\n0 - concluir'))
+        if item_para_alterar == 1:
+            bkp_marca = input('Novo valor: ')
+        elif item_para_alterar == 2:
+            bkp_modelo = input('Novo valor: ')
+        elif item_para_alterar == 3:
+            bkp_processador = input('Novo valor: ')
+        elif item_para_alterar == 4:
+            bkp_ram = input('Novo valor: ')
+        elif item_para_alterar == 5:
+            bkp_memoria = input('Novo valor: ')
+        elif item_para_alterar == 0:
+            break
+        else:
+            print('ERRO')
+
+    celular = {'marca': bkp_marca, 'modelo': bkp_modelo,
+               'processador': bkp_processador, 'ram': bkp_ram, 'memoria': bkp_memoria}
+
+    # Adicionando a lista ao banco de dados
+    # A chave usada para o cadastro é o modelo do aparelho
+    banco[edit] = pickle.dumps(celular) # <<<<<<<<<<< alterar para lista
+    
     banco.close()
-    pass
 
 
 def apagar_cadastro():
@@ -104,14 +136,20 @@ def apagar_cadastro():
     print('Os celulares cadastrados são: ')
     for key in banco:
         cell = pickle.loads(banco.get(key))
-        print(cell[0]['modelo'], end=' | ')
+        print(cell['modelo'], end=' | ')
     modelo = input('\nQual celular você quer remover: ')
 
     cell = pickle.loads(banco.get(modelo))
     print(cell)
 
+    # Confirmação
+    conf = input('Realmente deseja apagar o modelo? [S/N]: ').upper().strip()
     # Apagando
-    del(banco[modelo])
+    if conf == 'S':
+        input('Modelo DELETADO!\nPressione ENTER para continuar!')
+        del(banco[modelo])
+    else:
+        input('Pressione ENTER para continuar!')
 
     banco.close()
 
