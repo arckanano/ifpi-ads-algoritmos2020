@@ -129,18 +129,20 @@ def duplicar_cadastro(modelo):
     bkp_memoria = a['memoria']
 
 
-    celular = {'marca': bkp_marca,
-               'modelo': bkp_modelo, 'memoria': bkp_memoria}
+
 
     # Adicionando a lista ao banco de dados
     # A chave usada para o cadastro é o modelo do aparelho
     c = 1
     for key in banco:
-        if banco[modelo] == banco[key]
-        c += 1
+        if banco[modelo] == banco[key]:
+            c += 1
     
-    print('C', c)
-
-    # banco[modelo] = pickle.dumps(celular)  # <<<<<<<<<<< alterar para lista
+    nome_da_chave = f'{modelo}{c}'
+    
+    # print('C', c)
+    celular = {'marca': bkp_marca,
+               'modelo': nome_da_chave, 'memoria': bkp_memoria}
+    banco[nome_da_chave] = pickle.dumps(celular)  # <<<<<<<<<<< alterar para lista
 
     banco.close()
