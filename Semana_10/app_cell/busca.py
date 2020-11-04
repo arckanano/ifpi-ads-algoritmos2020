@@ -6,7 +6,7 @@ def busca_celular():
 
     banco = dbm.open('cadastro_cells', 'c')
 
-    search = input('Buscar por: ')
+    search = input('Buscar por: ').strip()
 
     for key in banco:
         item = pickle.loads(banco.get(key))
@@ -108,9 +108,7 @@ def editar_cadastro(modelo):
     celular = {'marca': bkp_marca,
                'modelo': bkp_modelo, 'memoria': bkp_memoria}
 
-    # Adicionando a lista ao banco de dados
-    # A chave usada para o cadastro é o modelo do aparelho
-    banco[modelo] = pickle.dumps(celular)  # <<<<<<<<<<< alterar para lista
+    banco[modelo] = pickle.dumps(celular)
 
     banco.close()
 
@@ -120,7 +118,6 @@ def duplicar_cadastro(modelo):
 
     banco = dbm.open('cadastro_cells', 'c')
 
-    # edit = input('Modelo a ser alterado: ')
     a = pickle.loads(banco[modelo])
 
     # Backup dos dados
@@ -128,21 +125,16 @@ def duplicar_cadastro(modelo):
     bkp_modelo = a['modelo']
     bkp_memoria = a['memoria']
 
-
-
-
-    # Adicionando a lista ao banco de dados
-    # A chave usada para o cadastro é o modelo do aparelho
     c = 1
     for key in banco:
         if banco[modelo] == banco[key]:
             c += 1
-    
+
     nome_da_chave = f'{modelo}{c}'
-    
-    # print('C', c)
+
     celular = {'marca': bkp_marca,
                'modelo': nome_da_chave, 'memoria': bkp_memoria}
-    banco[nome_da_chave] = pickle.dumps(celular)  # <<<<<<<<<<< alterar para lista
+    banco[nome_da_chave] = pickle.dumps(
+        celular)
 
     banco.close()
