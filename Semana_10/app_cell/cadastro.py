@@ -17,12 +17,9 @@ def novo_celular():
             print('Aparelho já cadastrado!')
             break
         else:
-            # Dicionário com os dados
             celular = {'marca': marca, 'modelo': modelo, 'memoria': mRom}
 
-            # Adicionando a lista ao banco de dados
-            # A chave usada para o cadastro é o modelo do aparelho
-            banco[modelo] = pickle.dumps(celular)  # <<<<<<<<<<< alterar para lista
+            banco[modelo] = pickle.dumps(celular)
 
             print('--- Celular Cadastrado ---')
             input('-----Pressione ENTER para VOLTAR ao MENU-----')
