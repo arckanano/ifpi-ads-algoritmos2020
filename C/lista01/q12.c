@@ -8,7 +8,7 @@ int main(void) {
     
     float raio, pi=3.14, comprimento;
 
-    printf("Raio:\n")
+    printf("Raio:\n");
     scanf("%f", &raio);
 
     comprimento = 2 * pi * raio;

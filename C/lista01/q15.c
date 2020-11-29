@@ -13,7 +13,7 @@ int main(void) {
 
     tempC = (5 * tempF - 160) / 9;
 
-    printf("Temperatura de C = %f", tempC)
+    printf("Temperatura de C = %f", tempC);
     
     system("pause");
     return 0;
